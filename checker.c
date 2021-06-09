@@ -6,7 +6,7 @@
 /*   By: jessy <jessy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 17:20:16 by jdamoise          #+#    #+#             */
-/*   Updated: 2021/06/09 22:17:21 by jessy            ###   ########.fr       */
+/*   Updated: 2021/06/09 22:23:43 by jessy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	checker(t_pile **pile_a, t_pile **pile_b)
 	lstclear(pile_b);
 	if (ret)
 		return (write(2, "KO\n", 3));
+	write(1, "OK\n", 3);
 	return (0);
 }
 
