@@ -13,7 +13,7 @@ except:
     if (not is_exited):
         print("You must send a number as an argument")
     exit()
-arg = list(range(stack_size))
+arg = list(range(-stack_size / 2,  stack_size / 2))
 REPEAT = 50
 total_operations = 0
 ok_count = 0

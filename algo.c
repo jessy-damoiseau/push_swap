@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdamoise <jdamoise@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessy <jessy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 17:19:57 by jdamoise          #+#    #+#             */
-/*   Updated: 2021/06/09 17:20:01 by jdamoise         ###   ########.fr       */
+/*   Updated: 2021/06/09 21:54:05 by jessy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_limit(t_pile **pile_a, int nbparam, int ic)
 	t_pile	*tmp2;
 
 	tmp = *pile_a;
-	nb = 0;
+	nb = -2147483648;
 	while (tmp)
 	{
 		place = 0;

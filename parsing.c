@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdamoise <jdamoise@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessy <jessy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 17:20:48 by jdamoise          #+#    #+#             */
-/*   Updated: 2021/06/09 17:20:49 by jdamoise         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:01:37 by jessy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ int	fill_struct(t_pile **pile_a, char **av)
 
 int	check_pile(int ac, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	long	j;
 
 	j = 0;
 	while (av[++j])
@@ -100,7 +100,12 @@ int	check_pile(int ac, char **av)
 				return (write(2, "Error\n", 6));
 	}
 	if (ac == 2)
+	{
+		j = 0;
+		if (check_arg(av[1], &j))
+			return (write(2, "Error\n", 6));
 		return (0);
+	}
 	if (check_doublon(av))
 		return (1);
 	return (0);
