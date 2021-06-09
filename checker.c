@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdamoise <jdamoise@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessy <jessy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 17:20:16 by jdamoise          #+#    #+#             */
-/*   Updated: 2021/06/09 17:20:18 by jdamoise         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:17:21 by jessy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	checker(t_pile **pile_a, t_pile **pile_b)
 	lstclear(pile_b);
 	if (ret)
 		return (write(2, "KO\n", 3));
-	write(1, "OK\n", 3);
 	return (0);
 }
 
@@ -87,7 +86,8 @@ int	main(int ac, char **av)
 		return (1);
 	if (ac <= 2)
 	{
-		write(1, "OK\n", 3);
+		if (ac == 2)
+			write(1, "OK\n", 3);
 		return (0);
 	}
 	if (fill_struct(&pile_a, av))
