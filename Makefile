@@ -6,7 +6,7 @@
 #    By: jessy <jessy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 14:45:20 by bmaudet           #+#    #+#              #
-#    Updated: 2021/11/01 16:38:19 by jessy            ###   ########.fr        #
+#    Updated: 2021/11/17 18:35:57 by jessy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJS_DIR	=	objs
 ################################################################################
 
 CC =		@gcc
-RM =		@rm -f
+RM =		@rm -rf
 CFLAGS =	-Wall -Wextra -Werror -g3 -I$(HEADERS_DIR)
 
 ################################################################################
@@ -48,11 +48,14 @@ OBJS2 = $(addprefix $(OBJS_DIR)/, $(SRCS2:.c=.o))
 
 ################################################################################
 
-all:	init_name1 ${NAME1}
+all:	init_dir init_name1 ${NAME1}
 
-bonus:	init_name1 ${NAME1} init_name2 ${NAME2}
+bonus:	init_dir init_name1 ${NAME1} init_name2 ${NAME2}
 
 ################################################################################
+
+init_dir:
+		@ $(shell mkdir -p $(OBJS_DIR))
 
 init_name1:
 		if test -f $(NAME1);\
@@ -86,7 +89,7 @@ ${NAME2}:	${OBJS2}
 
 clean:
 		echo "$(_RED)[cleaning up .out & objects files]"
-		${RM} ${OBJS1} ${OBJS2}
+		${RM} ${OBJS1} ${OBJS2} $(OBJS_DIR)
 
 fclean:		clean
 			echo "$(_RED)[cleaning up .out, objects & library files]"
