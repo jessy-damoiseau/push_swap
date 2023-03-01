@@ -1,5 +1,7 @@
 # push_swap
 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"  width="30" height="30" />
+
 ## Overview
  - Sort data on a stack, with a limited set of instructions, using the lowest possible number of actions.
  - Write a program named "push_swap" that takes as an argument the stack A formatted as a list of integers. The first argument should be at the top of the stack
